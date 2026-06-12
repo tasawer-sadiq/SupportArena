@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SupportArena</title>
+  <!-- Google Fonts Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.2">
+</head>
+<body class="auth-page" style="background: radial-gradient(130% 100% at 50% 0%, #0f172a 0%, #0b0f19 60%, #020408 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+  <section class="app-shell" style="justify-content: center; align-items: center; min-height: auto; width: 100%; max-width: 480px; padding: 20px;">
+    <div class="auth-card card" style="width: 100%; margin: 0; padding: 24px;">
+      <!-- Header Row with Back and Theme morph toggle -->
+      <div class="auth-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <button id="back-to-landing-btn" class="auth-btn-circle" title="Back to overview">←</button>
+        <button id="auth-theme-toggle-btn" class="auth-btn-circle" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle class="sun-element" cx="12" cy="12" r="4" fill="none"></circle>
+            <path class="sun-element" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            <path class="moon-element" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" fill="none"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Segmented Control for Login/Signup -->
+      <div class="segmented-control">
+        <button id="login-tab" class="active">Login</button>
+        <button id="signup-tab" onclick="window.location.href='signup.html'">Sign Up</button>
+      </div>
+
+      <!-- Login Form Panel -->
+      <div id="login-form" class="form-panel">
+        <h2 style="text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; font-family: 'Outfit', sans-serif;">Login to SupportArena</h2>
+        <div>
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="citizen@example.com">
+        </div>
+        <div style="margin-top: 16px; margin-bottom: 24px;">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••">
+        </div>
+        <button id="login-button" class="primary" style="padding: 10px 28px; font-size: 0.95rem; border-radius: 8px;">Login</button>
+      </div>
+
+      <!-- Quick Access Logins panel -->
+      <div class="quick-access-panel" style="margin-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px;">
+        <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 12px; font-weight: 700; text-align: center;">Quick Access Demo Accounts</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Admin row -->
+          <div>
+            <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px; font-weight: 700;">Supervision</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <button id="quick-admin" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; border-color: var(--danger); color: var(--danger); font-weight: 600;">Admin Supervisor</button>
+            </div>
+          </div>
+          
+          <!-- Citizens row -->
+          <div>
+            <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px; font-weight: 700;">Citizens</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <button id="quick-user1" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 500;">Ahmad Ali</button>
+              <button id="quick-user2" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 500;">Sara Khan</button>
+              <button id="quick-user3" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 500;">M. Usman</button>
+            </div>
+          </div>
+          
+          <!-- Organizations row -->
+          <div>
+            <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px; font-weight: 700;">Organizations</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <button id="quick-org1" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 500; border-color: var(--primary); color: var(--primary);">WAPDA</button>
+              <button id="quick-org2" class="secondary small" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 500; border-color: var(--primary); color: var(--primary);">Rescue 1122</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Firebase Compatibility SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Load Scripts -->
+  <script src="js/firebase-config.js?v=1.2"></script>
+  <script src="js/dummyData.js?v=1.2"></script>
+  <script src="js/storage.js?v=1.2"></script>
+  <script src="js/auth.js?v=1.2"></script>
+  <script src="js/ui.js?v=1.2"></script>
+  <script src="js/admin.js?v=1.2"></script>
+  <script src="app.js?v=1.2"></script>
+</body>
+</html>

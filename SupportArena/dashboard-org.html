@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Dashboard - SupportArena</title>
+  <!-- Google Fonts Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- App Shell Container -->
+  <div id="app-shell-container" class="app-shell">
+    <!-- Header -->
+    <header class="app-header" id="app-global-header">
+      <div class="header-left" id="header-logo-home" title="Go to Home Timeline" style="cursor: pointer;">
+        <div class="logo-badge">SA</div>
+        <div style="text-align: left;">
+          <h1 style="font-family: 'Outfit', sans-serif;">SupportArena</h1>
+          <p>Civic Social & Issue Tracking Feed</p>
+        </div>
+      </div>
+      <div class="header-right" style="display: flex; align-items: center; gap: 12px;">
+        <button id="theme-toggle-btn" class="auth-btn-circle" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle class="sun-element" cx="12" cy="12" r="4" fill="none"></circle>
+            <path class="sun-element" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            <path class="moon-element" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" fill="none"></path>
+          </svg>
+        </button>
+        <button id="app-role-label" class="role-badge" style="background: rgba(16,185,129,0.1); color: var(--success); border: 1px solid rgba(16,185,129,0.2); font-weight:700;">Organization</button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard layout -->
+    <main id="dashboard">
+      <!-- Critical Banner Row -->
+      <div id="alert-banner-container" class="hidden">
+        <!-- Banner injected dynamically -->
+      </div>
+      <div class="dashboard-grid">
+        <!-- Left Sidebar: Profile -->
+        <aside class="dashboard-sidebar">
+          <!-- Profile Card -->
+          <div id="profile-card-container">
+            <!-- Profile Info injected dynamically -->
+          </div>
+        </aside>
+
+        <!-- Center Column: Post feed -->
+        <section class="feed-column">
+          <!-- Main Feed Posts Container -->
+          <div id="feed-container" class="feed-container">
+            <!-- Timeline posts injected dynamically -->
+          </div>
+        </section>
+
+        <!-- Right Sidebar: Organization Municipal Task Board -->
+        <aside class="dashboard-sidebar">
+          <div class="right-sidebar-panel" id="org-taskboard-card">
+            <h3>🛠️ Municipal Task Board</h3>
+            <p class="subtitle" style="font-size:0.75rem; color:var(--text-light); margin-bottom:12px;">Tasks dispatched to your agency by Admin Supervisor.</p>
+            <div class="ai-queue-list" id="org-tasks-list">
+              <!-- Tasks listing injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Right Sidebar: Alerts & Notifications -->
+          <div class="right-sidebar-panel" id="org-notifications-card" style="margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="margin: 0;">🔔 Alerts & Notifications</h3>
+              <button id="clear-notifications-btn" class="secondary small" style="padding: 2px 8px; font-size: 0.7rem; border-radius: 4px;">Clear All</button>
+            </div>
+            <div class="ai-queue-list" id="notifications-list-container">
+              <!-- Alerts injected dynamically -->
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase Compatibility SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Load Scripts -->
+  <script src="js/firebase-config.js?v=1.3"></script>
+  <script src="js/dummyData.js?v=1.3"></script>
+  <script src="js/storage.js?v=1.3"></script>
+  <script src="js/dashboard-org.js?v=1.3"></script>
+</body>
+</html>

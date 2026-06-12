@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SupportArena</title>
+  <!-- Google Fonts Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- App Shell Container -->
+  <div id="app-shell-container" class="app-shell">
+    <!-- Header -->
+    <header class="app-header" id="app-global-header">
+      <div class="header-left" id="header-logo-home" title="Go to Home Timeline" style="cursor: pointer;">
+        <div class="logo-badge">SA</div>
+        <div style="text-align: left;">
+          <h1 style="font-family: 'Outfit', sans-serif;">SupportArena</h1>
+          <p>Civic Social & Issue Tracking Feed</p>
+        </div>
+      </div>
+      <div class="header-right" style="display: flex; align-items: center; gap: 12px;">
+        <button id="theme-toggle-btn" class="auth-btn-circle" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle class="sun-element" cx="12" cy="12" r="4" fill="none"></circle>
+            <path class="sun-element" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            <path class="moon-element" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" fill="none"></path>
+          </svg>
+        </button>
+        <button id="app-role-label" class="role-badge" style="background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.2); font-weight:700;">Admin Supervisor</button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard layout -->
+    <main id="dashboard">
+      <!-- Critical Banner Row -->
+      <div id="alert-banner-container" class="hidden">
+        <!-- Banner injected dynamically -->
+      </div>
+      <div class="dashboard-grid">
+        <!-- Left Sidebar: Profile and Severity Queues Filter -->
+        <aside class="dashboard-sidebar">
+          <!-- Profile Card -->
+          <div id="profile-card-container">
+            <!-- Profile Info injected dynamically -->
+          </div>
+
+          <!-- AI Severity Queues Navigation Card -->
+          <div class="profile-card" id="severity-filter-card">
+            <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              🛡️ AI Severity Queues
+            </h3>
+            <div class="severity-sidebar-list" id="admin-priority-nav">
+              <div class="severity-sidebar-item active" data-priority="Critical">
+                <span><span class="severity-badge-dot" style="background: var(--danger);"></span>Critical Issues</span>
+                <span class="severity-count" id="count-critical">0</span>
+              </div>
+              <div class="severity-sidebar-item" data-priority="High">
+                <span><span class="severity-badge-dot" style="background: var(--warning);"></span>High Priority</span>
+                <span class="severity-count" id="count-high">0</span>
+              </div>
+              <div class="severity-sidebar-item" data-priority="Medium">
+                <span><span class="severity-badge-dot" style="background: var(--primary);"></span>Medium Priority</span>
+                <span class="severity-count" id="count-medium">0</span>
+              </div>
+              <div class="severity-sidebar-item" data-priority="Low">
+                <span><span class="severity-badge-dot" style="background: var(--text-light);"></span>Low Priority</span>
+                <span class="severity-count" id="count-low">0</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Center Column: Post feed -->
+        <section class="feed-column">
+          <!-- Main Feed Posts Container -->
+          <div id="feed-container" class="feed-container">
+            <!-- Timeline posts injected dynamically -->
+          </div>
+        </section>
+
+        <!-- Right Sidebar: Severity incident queue & Dispatched Assignments -->
+        <aside class="dashboard-sidebar">
+          <!-- AI Critical Incident Queue card -->
+          <div class="right-sidebar-panel" id="ai-queue-card">
+            <h3>🤖 AI Critical Incident Queue</h3>
+            <p class="subtitle" style="font-size:0.75rem; color:var(--text-light); margin-bottom:12px;">Active issues analyzed by AI validator.</p>
+            <div class="ai-queue-list" id="ai-critical-queue-list">
+              <!-- Critical items injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Active Help Dispatches Panel -->
+          <div class="right-sidebar-panel" id="dispatches-card" style="margin-top:20px;">
+            <h3>📬 Active Help Dispatches</h3>
+            <div class="ai-queue-list" id="sidebar-dispatch-list">
+              <!-- Active assignments listing injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Right Sidebar: Alerts & Notifications -->
+          <div class="right-sidebar-panel" id="admin-notifications-card" style="margin-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="margin: 0;">🔔 Alerts & Notifications</h3>
+              <button id="clear-notifications-btn" class="secondary small" style="padding: 2px 8px; font-size: 0.7rem; border-radius: 4px;">Clear All</button>
+            </div>
+            <div class="ai-queue-list" id="notifications-list-container">
+              <!-- Alerts injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Dispatch Task Card (Mockup styled, populated dynamically when item is clicked) -->
+          <div class="right-sidebar-panel hidden" id="dispatch-task-card" style="margin-top:20px; background: var(--surface-card); border: 1px solid var(--border);">
+            <h3>🛠️ Dispatch Task</h3>
+            <p class="subtitle" style="font-size:0.75rem; color:var(--text-light); margin-bottom:12px;">Assigning issue to a municipal responder</p>
+            
+            <div style="margin-bottom:12px;">
+              <label style="font-weight:700; font-size:0.75rem; color:var(--text-light); display:block; margin-bottom:4px;">Post Title</label>
+              <p id="dispatch-post-title" style="font-size:0.85rem; font-weight:600; color:#fff; line-height:1.4; margin:0;"></p>
+            </div>
+            
+            <div style="margin-bottom:12px;">
+              <label for="dispatch-select" style="font-weight:700; font-size:0.75rem; color:var(--text-light); display:block; margin-bottom:4px;">Select Agency</label>
+              <select id="dispatch-select" style="width: 100%; padding: 8px; font-size: 0.8rem; background: #0b0f19; border: 1px solid var(--border); color:#fff; border-radius:6px;"></select>
+            </div>
+            
+            <div style="margin-bottom:12px;">
+              <label for="dispatch-instructions" style="font-weight:700; font-size:0.75rem; color:var(--text-light); display:block; margin-bottom:4px;">Instructions</label>
+              <textarea id="dispatch-instructions" rows="3" placeholder="Instructions for the crew..." style="width: 100%; padding: 8px; font-size: 0.8rem; background: #0b0f19; border: 1px solid var(--border); color:#fff; border-radius:6px; font-family:inherit;"></textarea>
+            </div>
+            
+            <div style="display:flex; justify-content:space-between; gap:8px; margin-top:16px;">
+              <button class="secondary small" id="dispatch-cancel-btn" style="flex:1; padding: 8px; font-size: 0.8rem;">Cancel</button>
+              <button class="primary small" id="dispatch-submit-btn" style="flex:1; padding: 8px; font-size: 0.8rem; font-weight: 700;">Dispatch</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase Compatibility SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Load Scripts -->
+  <script src="js/firebase-config.js?v=1.3"></script>
+  <script src="js/dummyData.js?v=1.3"></script>
+  <script src="js/storage.js?v=1.3"></script>
+  <script src="js/dashboard-admin.js?v=1.3"></script>
+</body>
+</html>

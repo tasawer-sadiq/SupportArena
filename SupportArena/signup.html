@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - SupportArena</title>
+  <!-- Google Fonts Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.2">
+</head>
+<body class="auth-page" style="background: radial-gradient(130% 100% at 50% 0%, #0f172a 0%, #0b0f19 60%, #020408 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+  <section class="app-shell" style="justify-content: center; align-items: center; min-height: auto; width: 100%; max-width: 480px; padding: 20px;">
+    <div class="auth-card card" style="width: 100%; margin: 0; padding: 24px;">
+      <!-- Header Row with Back and Theme morph toggle -->
+      <div class="auth-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <button id="back-to-landing-btn" class="auth-btn-circle" title="Back to overview">←</button>
+        <button id="auth-theme-toggle-btn" class="auth-btn-circle" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle class="sun-element" cx="12" cy="12" r="4" fill="none"></circle>
+            <path class="sun-element" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            <path class="moon-element" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" fill="none"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Segmented Control for Login/Signup -->
+      <div class="segmented-control">
+        <button id="login-tab" onclick="window.location.href='login.html'">Login</button>
+        <button id="signup-tab" class="active">Sign Up</button>
+      </div>
+
+      <!-- Signup Form Panel -->
+      <div id="signup-form" class="form-panel">
+        <h2 style="text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; font-family: 'Outfit', sans-serif;">Sign Up for SupportArena</h2>
+        
+        <!-- Citizen vs Org segmented toggle inside signup -->
+        <div style="margin-bottom: 20px;">
+          <label style="margin-bottom: 8px;">Register As</label>
+          <div class="segmented-control" style="margin-bottom: 0;">
+            <button id="signup-role-citizen" class="active">Register Citizen</button>
+            <button id="signup-role-org">Register Organization</button>
+          </div>
+        </div>
+
+        <!-- Citizen-specific fields -->
+        <div id="citizen-signup-fields">
+          <div>
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Jane Doe">
+          </div>
+          <div style="margin-top: 16px;">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" placeholder="you@example.com">
+          </div>
+          <div style="margin-top: 16px;">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="Create secure password">
+          </div>
+        </div>
+
+        <!-- Org-specific fields (default hidden) -->
+        <div id="signup-org-fields" class="hidden">
+          <div>
+            <label for="signup-org-name">Organization Name</label>
+            <input type="text" id="signup-org-name" placeholder="Rescue Services, WAPDA, etc.">
+          </div>
+          <div style="margin-top: 16px;">
+            <label for="signup-org-email">Contact Email</label>
+            <input type="email" id="signup-org-email" placeholder="operations@rescue.org">
+          </div>
+          <div style="margin-top: 16px;">
+            <label for="signup-org-password">Password</label>
+            <input type="password" id="signup-org-password" placeholder="Create admin password">
+          </div>
+        </div>
+
+        <button id="signup-button" class="primary" style="margin-top: 28px; padding: 10px 28px; font-size: 0.95rem; border-radius: 8px;">Sign Up</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Firebase Compatibility SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Load Scripts -->
+  <script src="js/firebase-config.js?v=1.2"></script>
+  <script src="js/dummyData.js?v=1.2"></script>
+  <script src="js/storage.js?v=1.2"></script>
+  <script src="js/auth.js?v=1.2"></script>
+  <script src="js/ui.js?v=1.2"></script>
+  <script src="js/admin.js?v=1.2"></script>
+  <script src="app.js?v=1.2"></script>
+</body>
+</html>

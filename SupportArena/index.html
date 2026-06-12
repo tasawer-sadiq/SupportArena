@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SupportArena - AI-Powered Civic Action Platform</title>
+  <!-- Google Fonts Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.2">
+</head>
+<body>
+
+  <!-- Landing Section -->
+  <section id="landing-section" class="app-shell">
+    <!-- Header -->
+    <header class="landing-header">
+      <div class="header-left">
+        <div class="logo-badge">SA</div>
+        <div style="text-align: left;">
+          <h1 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; font-weight: 800;">SupportArena</h1>
+        </div>
+      </div>
+      <div class="header-right-group">
+        <div class="landing-nav-links">
+          <a href="#features-target">Features</a>
+          <a href="#works-target">How It Works</a>
+        </div>
+        <div class="header-right">
+          <button id="landing-login-btn" class="secondary small" style="border-radius: 6px; padding: 6px 16px;">Login</button>
+          <button id="landing-signup-btn" class="primary small" style="border-radius: 6px; padding: 6px 16px;">Sign Up</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero split layout -->
+    <div class="landing-split-layout">
+      <div class="landing-hero-left">
+        <span class="landing-pill">AI for Civic Innovation</span>
+        <h2 class="landing-title">Empower Your Community. Resolve Local Issues.</h2>
+        <p class="landing-desc">
+          SupportArena combines a civic social feed with intelligent AI dispatching to connect citizens, admins, and municipal services in real-time.
+        </p>
+        <button id="landing-report-issue-btn" class="primary" style="padding: 12px 24px; font-size: 1rem;">Report an Issue</button>
+      </div>
+      
+      <!-- Mock Window Card -->
+      <div class="mock-window">
+        <div class="mock-window-header">
+          <div class="mock-window-dots">
+            <div class="mock-dot red"></div>
+            <div class="mock-dot yellow"></div>
+            <div class="mock-dot green"></div>
+          </div>
+          <div style="color: #f59e0b; font-size: 1rem; cursor: default;">☀️</div>
+        </div>
+        
+        <!-- Inner Mock Card -->
+        <div class="mock-window-card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <div class="mock-avatar" style="background: #2563eb;">C</div>
+            <div style="display: flex; align-items: center;">
+              <strong style="font-size: 0.9rem; color: #ffffff;">Citizen</strong>
+              <span class="mock-category" style="background: rgba(37, 99, 235, 0.2); color: #60a5fa;">SAFETY</span>
+            </div>
+          </div>
+          <h4 class="mock-title">Transformer explosion & active fire in sector F-7</h4>
+          <p class="mock-body">
+            High-voltage transformer exploded near Block C. Flames spreading to nearby trees. Sector roads blocked. Emergency dispatch needed!
+          </p>
+          <div class="mock-chips-row">
+            <span class="mock-chip self-crit">SELF: CRITICAL</span>
+            <span class="mock-chip ai-crit">AI VERDICT: CRITICAL</span>
+          </div>
+          
+          <!-- Dispatch badge -->
+          <div class="mock-admin-reply">
+            <div class="mock-avatar admin" style="background: #1e40af;">AD</div>
+            <span><strong>Admin:</strong> Dispatching Community Safety Network and Fire Brigade.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section" id="features-target">
+      <h3 class="section-title">Features Designed for Real Impact</h3>
+      <p class="section-subtitle">A structured platform ensuring citizen concerns are heard, verified, and resolved.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">💬</div>
+          <h4>Civic Discussion Feed</h4>
+          <p>Post local problems, write replies, and collaborate inline. Scroll feeds smoothly with collapsible comment timelines.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🤖</div>
+          <h4>Simulated AI Scoring</h4>
+          <p>Automated scanning checks descriptions for hazards to prioritize critical situations, ensuring fast emergency tracking.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">📤</div>
+          <h4>Admin Task Dispatching</h4>
+          <p>Supervisors review criticality alerts and route tasks to water, electric, or safety networks with priority directions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">🔧</div>
+          <h4>Agency Feedback Loops</h4>
+          <p>Organizations mark tasks as resolved, submit feedback, notify citizens publicly, and clear items from dispatch boards.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How it works section -->
+    <div class="works-section" id="works-target">
+      <h3 class="section-title">How SupportArena Works</h3>
+      
+      <div class="works-grid">
+        <div class="work-step">
+          <div class="work-step-num">1</div>
+          <h4>Citizen Reports</h4>
+          <p>Anyone can post an issue with photos, categories, and typed locations.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-step-num">2</div>
+          <h4>AI Scoring</h4>
+          <p>AI scans terms for criticality, placing high priority items on the Admin board.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-step-num">3</div>
+          <h4>Admin Dispatches</h4>
+          <p>Admin supervisor sends tasks to municipal agencies with response guidelines.</p>
+        </div>
+        <div class="work-step">
+          <div class="work-step-num">4</div>
+          <h4>Agency Solves</h4>
+          <p>Crews resolve issues, comment on posts, and notify the neighborhood.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <p>© 2026 SupportArena. Rebuilt for AI for Civic Innovation Hackathon.</p>
+    </footer>
+  </section>
+
+
+
+
+
+  <!-- Firebase Compatibility SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Load Scripts -->
+  <script src="js/firebase-config.js?v=1.2"></script>
+  <script src="js/dummyData.js?v=1.2"></script>
+  <script src="js/storage.js?v=1.2"></script>
+  <script src="js/auth.js?v=1.2"></script>
+  <script src="js/ui.js?v=1.2"></script>
+  <script src="js/admin.js?v=1.2"></script>
+  <script src="app.js?v=1.2"></script>
+</body>
+</html>
