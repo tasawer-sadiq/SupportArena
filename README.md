@@ -4,7 +4,8 @@
 >
 > An intelligent civic society platform empowering citizens to report local problems, propose collaborative solutions, and leverage advanced AI to validate issues and coordinate responses with community leaders and partner organizations.
 >
-> ![1781251299612](image/README/1781251299612.png)
+> <img width="938" height="428" alt="Screenshot 2026-06-12 125126" src="https://github.com/user-attachments/assets/f6a72372-efbb-4985-b000-ce7a0f392684" />
+
 
 ---
 
