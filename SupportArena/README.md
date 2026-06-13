@@ -17,7 +17,7 @@ SupportArena showcases the end-to-end user experience of CivicConnect in an inte
 
 ## 🧠 Gemini API AI Engine
 
-The prototype demonstrates the integration of the **Gemini API** (`gemini-1.5-flash`) for real-time intelligent analysis:
+The prototype demonstrates the integration of the **Gemini API**  for real-time intelligent analysis:
 
 1. **Semantic Severity Scoring:** Analyzes the title and description of new posts to calculate emergency severity (**Critical**, **High**, **Medium**, **Low**). It detects the gravity of situations (like collapsed structures or gas leaks) contextually rather than matching exact keywords.
 2. **Upcoming Crisis Forecasting:** Scans community feeds and environmental data to project upcoming threats, triggering site-wide alert banners for high-risk regions.
