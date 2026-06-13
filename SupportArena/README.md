@@ -1,4 +1,4 @@
-# 🏛️ SupportArena (Prototype Workspace)
+#  SupportArena (Prototype Workspace)
 > **Interactive Live Prototype for AI-Powered Civic Action**
 > 
 > *This workspace contains the working frontend prototype demonstrating user workflows, dual-mode synchronization, and the Gemini API AI engine for the SupportArena platform.*
